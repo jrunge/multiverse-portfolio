@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Header = styled.header`
   transform: translateY(${(props) => props.loading ? '4em' : '0'});
   transition: transform 1s ease;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
   background: #1f2224;
   bottom: -1em;
   height: 5em;
@@ -122,7 +121,7 @@ class MyHeader extends React.Component {
         <h1><a href="index.html"><strong>Multiverse</strong> by HTML5 UP</a></h1>
         <nav>
           <ul>
-            <li><a href="#footer" className="icon fa-info-circle">About</a></li>
+            <li><a href="#footer">About <FontAwesomeIcon icon={faInfoCircle} /></a></li>
           </ul>
         </nav>
       </Header>

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { map, padStart } from "lodash";
 
 import Header from "../components/header";
-import Footer from "../components/footer";
+import Item from "../components/item";
 
 const Wrapper = styled.div`
   position: relative;
@@ -113,7 +113,7 @@ class IndexPage extends React.Component {
             ))}
           </Row>
         </Page>
-        <Footer open={this.state.panelOpen} close={this.closePanel}/>
+        <Item open={this.state.panelOpen} close={this.closePanel}/>
       </Wrapper>
     );
   }
