@@ -121,7 +121,7 @@ class MyHeader extends React.Component {
         <h1><a href="index.html"><strong>Multiverse</strong> by HTML5 UP</a></h1>
         <nav>
           <ul>
-            <li><a href="#footer">About <FontAwesomeIcon icon={faInfoCircle} /></a></li>
+            <li><a href="#footer" onClick={this.props.open}>About <FontAwesomeIcon icon={faInfoCircle} /></a></li>
           </ul>
         </nav>
       </Header>

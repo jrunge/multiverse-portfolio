@@ -1,9 +1,9 @@
-import React from 'react'
-import { Router, Link } from 'react-static'
-import styled, { injectGlobal } from 'styled-components'
-import { hot } from 'react-hot-loader'
+import React from "react";
+import { Router, Link } from "react-static";
+import styled, { injectGlobal } from "styled-components";
+import { hot } from "react-hot-loader";
 //
-import Routes from 'react-static-routes'
+import Routes from "react-static-routes";
 
 injectGlobal`
   @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Raleway:400,800,900");
@@ -252,11 +252,9 @@ injectGlobal`
   .align-right {
   text-align: right;
   }
-`
+`;
 
-const AppStyles = styled.div`
-
-`
+const AppStyles = styled.div``;
 
 const App = () => (
   <Router>
@@ -272,6 +270,6 @@ const App = () => (
       </div> */}
     </AppStyles>
   </Router>
-)
+);
 
-export default hot(module)(App)
+export default hot(module)(App);

@@ -7,7 +7,7 @@
     "start": "react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
-    "serve": "serve dist -p 3000"
+    "serve": "serve docs -p 3000"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
@@ -18,6 +18,7 @@
     "lodash": "^4.17.11",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-image-gallery": "^0.8.12",
     "react-router": "^4.2.0",
     "react-static": "^5.9.12",
     "styled-components": "^3"

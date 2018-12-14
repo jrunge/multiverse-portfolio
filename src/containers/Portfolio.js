@@ -6,6 +6,7 @@ import { map, padStart } from "lodash";
 
 import Header from "../components/header";
 import Item from "../components/item";
+import About from "../components/about";
 
 const Wrapper = styled.div`
   position: relative;
@@ -59,7 +60,8 @@ class IndexPage extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      panelOpen: false
+      panelOpen: false,
+      aboutOpen: false
     };
   }
 
@@ -73,6 +75,14 @@ class IndexPage extends React.Component {
 
   closePanel = () => {
     this.setState({ panelOpen: false });
+  };
+
+  openAbout = () => {
+    this.setState({ aboutOpen: true });
+  };
+
+  closeAbout = () => {
+    this.setState({ aboutOpen: false });
   };
 
   render() {
@@ -92,7 +102,7 @@ class IndexPage extends React.Component {
     ];
     return (
       <Wrapper>
-        <Header />
+        <Header open={this.openAbout}/>
         <Page fluid>
           <Row>
             {map(titles, (title, i) => (
@@ -114,6 +124,7 @@ class IndexPage extends React.Component {
           </Row>
         </Page>
         <Item open={this.state.panelOpen} close={this.closePanel}/>
+        <About open={this.state.aboutOpen} close={this.closeAbout}/>
       </Wrapper>
     );
   }
