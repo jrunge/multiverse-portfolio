@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 export default {
-  siteRoot: "https://jrunge.github.io/multiverse-portfolio/",
+  basePath: 'multiverse-portfolio',
   paths: {
     dist: 'docs',
     assets: 'docs'
