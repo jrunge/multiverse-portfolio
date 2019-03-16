@@ -1,8 +1,8 @@
 import React from "react";
 // import { withSiteData } from "react-static";
-// import { Page, Row, Column } from "hedron";
 import styled from "styled-components";
 import { map, padStart } from "lodash";
+import { CSSTransition } from "react-transition-group";
 
 import Header from "../components/header";
 import Item from "../components/item";
@@ -104,9 +104,23 @@ class Portfolio extends React.Component {
     return (
       <Wrapper>
         <Header open={this.openAbout}/>
-        <ImageGrid/>
-        <Item open={this.state.panelOpen} close={this.closePanel}/>
-        <About open={this.state.aboutOpen} close={this.closeAbout}/>
+        <ImageGrid openPanel={this.openPanel}/>
+        <CSSTransition
+          in={this.state.panelOpen}
+          timeout={500}
+          classNames="item"
+          unmountOnExit
+        >
+          <Item close={this.closePanel}/>
+        </CSSTransition>
+        <CSSTransition
+          in={this.state.aboutOpen}
+          timeout={500}
+          classNames="about"
+          unmountOnExit
+        >
+          <About close={this.closeAbout}/>
+        </CSSTransition>
       </Wrapper>
     );
   }

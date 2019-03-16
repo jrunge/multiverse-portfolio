@@ -9,7 +9,7 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 const Footer = styled.footer`
   padding: 4em 4em 2em 4em ;
-  transform: translateY(${(props) => props.open ? '1px' : '100vh'});
+  /* transform: translateY(${(props) => props.open ? '1px' : '100vh'}); */
   transition: transform 0.5s ease;
   -webkit-overflow-scrolling: touch;
   background: rgba(36, 38, 41, 0.975);
@@ -20,6 +20,19 @@ const Footer = styled.footer`
   position: fixed;
   width: 100%;
   z-index: 10001;
+
+  &.item-enter {
+    transform: translateY(100vh);
+  }
+  &.item-enter-active {
+    transform: translateY(1px);
+  }
+  &.item-exit {
+    transform: translateY(1px);
+  }
+  &.item-exit-active {
+    transform: translateY(100vh);
+  }
 
   .inner {
     margin: 0 auto;
@@ -88,10 +101,23 @@ const Footer = styled.footer`
   }
 
   @media screen and (max-width: 736px) {
-      transform: translateY(${(props) => props.open ? '0' : '-100vh'});
+      /* transform: translateY(${(props) => props.open ? '0' : '-100vh'}); */
       padding: 4em 2em 2em 2em ;
       bottom: auto;
       top: calc(4em - 1px);
+
+      &.item-enter {
+        transform: translateY(-100vh);
+      }
+      &.item-enter-active {
+        transform: translateY(1px);
+      }
+      &.item-exit {
+        transform: translateY(1px);
+      }
+      &.item-exit-active {
+        transform: translateY(-100vh);
+      }
   }
 
   .leftNav, .rightNav {

@@ -85,7 +85,7 @@ class ImageGrid extends React.Component {
               <Image
                 loading={this.state.loading}
                 index={i}
-                onClick={this.openPanel}
+                onClick={this.props.openPanel}
                 imageUrl={getImageUrl(i)}
               >
                 <ImageTitle>{title}</ImageTitle>
