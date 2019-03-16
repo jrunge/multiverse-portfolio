@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from "react-router-dom";
 
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from 'react-image-gallery';
@@ -180,7 +181,7 @@ class MyFooter extends React.Component {
       },
     ]
     return (
-      <Footer loading={this.state.loading} open={this.props.open}>
+      <Footer loading={this.state.loading}>
         <div className="inner split">
           <div>
             <ImageGallery
@@ -222,7 +223,7 @@ class MyFooter extends React.Component {
               consectetur e hic appellat exercitation. Se velit constias familiaritatem.</p>
           </div>
         </div>
-        <div className="closer" onClick={this.props.close}></div>
+        <Link to="/" className="closer"/>
       </Footer>
     )
   }

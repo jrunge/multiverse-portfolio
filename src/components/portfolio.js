@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { map, padStart } from "lodash";
 import { CSSTransition } from "react-transition-group";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 
 import Header from "../components/header";
 import Item from "../components/item";
@@ -103,24 +104,35 @@ class Portfolio extends React.Component {
     ];
     return (
       <Wrapper>
-        <Header open={this.openAbout}/>
-        <ImageGrid openPanel={this.openPanel}/>
-        <CSSTransition
-          in={this.state.panelOpen}
-          timeout={500}
-          classNames="item"
-          unmountOnExit
-        >
-          <Item close={this.closePanel}/>
-        </CSSTransition>
-        <CSSTransition
-          in={this.state.aboutOpen}
-          timeout={500}
-          classNames="about"
-          unmountOnExit
-        >
-          <About close={this.closeAbout}/>
-        </CSSTransition>
+        <Router>
+          <Header/>
+          <ImageGrid/>
+          <Route path="/item/:id">
+            {({ match }) =>
+              <CSSTransition
+                in={match != null}
+                timeout={500}
+                classNames="item"
+                unmountOnExit
+              >
+                <Item close={this.closePanel}/>
+              </CSSTransition>
+            }
+          </Route>
+
+          <Route path="/about">
+            {({ match }) =>
+              <CSSTransition
+                in={match != null}
+                timeout={500}
+                classNames="about"
+                unmountOnExit
+              >
+                <About close={this.closeAbout}/>
+              </CSSTransition>
+            }
+          </Route>
+        </Router>
       </Wrapper>
     );
   }

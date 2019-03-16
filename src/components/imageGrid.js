@@ -3,6 +3,7 @@ import React from "react";
 import Grid from "hedron";
 import styled from "styled-components";
 import { map, padStart } from "lodash";
+import { Link } from "react-router-dom";
 
 const pad = padStart
 
@@ -82,14 +83,15 @@ class ImageGrid extends React.Component {
         <Grid.Bounds direction="horizontal" wrap>
           {map(titles, (title, i) => (
             <Grid.Box fluid sm={{width: "100%"}} md={{width: "50%"}} lg={{width: "33.33%"}} key={`thumb-${i}`}>
-              <Image
-                loading={this.state.loading}
-                index={i}
-                onClick={this.props.openPanel}
-                imageUrl={getImageUrl(i)}
-              >
-                <ImageTitle>{title}</ImageTitle>
-              </Image>
+              <Link to={`/item/${i}`}>
+                <Image
+                  loading={this.state.loading}
+                  index={i}
+                  imageUrl={getImageUrl(i)}
+                >
+                  <ImageTitle>{title}</ImageTitle>
+                </Image>
+              </Link>
             </Grid.Box>
           ))}
         </Grid.Bounds>

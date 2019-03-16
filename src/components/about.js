@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from "react-router-dom";
 
 const Footer = styled.footer`
   padding: 4em 4em 2em 4em ;
-  transform: translateY(1px);
+  /* transform: translateY(1px); */
   transition: transform 0.5s ease;
   -webkit-overflow-scrolling: touch;
   background: rgba(36, 38, 41, 0.975);
@@ -490,7 +491,7 @@ class MyFooter extends React.Component {
 
   render () {
     return (
-      <Footer loading={this.state.loading} open={this.props.open}>
+      <Footer loading={this.state.loading}>
         <div className="inner split">
           <div>
             <section>
@@ -533,7 +534,7 @@ class MyFooter extends React.Component {
             </section>
           </div>
         </div>
-        <div className="closer" onClick={this.props.close}></div>
+        <Link to="/" className="closer"/>
       </Footer>
     )
   }
