@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
+import { BrowserRouter, StaticRouter, Route} from "react-router-dom";
 
-//
+
 import './app.css'
-import logo from './logo.png'
 import Portfolio from './components/portfolio'
+
+const Router = typeof document !== 'undefined' ? BrowserRouter : StaticRouter;
 
 class App extends Component {
   render() {
     return (
-      <Portfolio/>
+      <Router basename={process.env.REACT_STATIC_ENV === "production" ? "multiverse-portfolio" : "/"}>
+        <Portfolio/>
+      </Router>
     )
   }
 }
