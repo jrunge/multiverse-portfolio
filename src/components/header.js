@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
 
 const Header = styled.header`
   transform: translateY(${(props) => props.loading ? '4em' : '0'});
@@ -121,7 +122,9 @@ class MyHeader extends React.Component {
         <h1><a href="index.html"><strong>Multiverse</strong> by HTML5 UP</a></h1>
         <nav>
           <ul>
-            <li><a href="#footer" onClick={this.props.open}>About <FontAwesomeIcon icon={faInfoCircle} /></a></li>
+            <li>
+              <Link to="/about">About <FontAwesomeIcon icon={faInfoCircle} /></Link>
+            </li>
           </ul>
         </nav>
       </Header>
