@@ -10,7 +10,9 @@ const server = http.createServer((request, response) => {
       { "source": "/multiverse-portfolio", "destination": "/index.html" },
       { "source": "/multiverse-portfolio/", "destination": "/index.html" },
       { "source": "/multiverse-portfolio/:suffix", "destination": "/:suffix" },
-      { "source": "/multiverse-portfolio/**/:suffix", "destination": "/templates/:suffix" }
+      { "source": "/multiverse-portfolio/404/:suffix", "destination": "/404/:suffix" },
+      { "source": "/multiverse-portfolio/static/:suffix", "destination": "/static/:suffix" },
+      { "source": "/multiverse-portfolio/templates/:suffix", "destination": "/templates/:suffix" }
     ]
   });
 })
