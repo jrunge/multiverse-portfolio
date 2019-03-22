@@ -1,6 +1,6 @@
 export default {
   // basePath: 'multiverse-portfolio',
-  assetsPath: '/multiverse-portfolio',
+  assetsPath: process.env.REACT_STATIC_ENV === 'production' ? '/multiverse-portfolio' : '',
   paths: {
     dist: 'docs',
   },
