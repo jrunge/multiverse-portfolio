@@ -18,8 +18,8 @@
     "react-dom": "^16.8.1",
     "react-hot-loader": "^4.3.12",
     "react-image-gallery": "^0.8.14",
-    "react-router-dom": "^4.4.0",
-    "react-static": "^6.0.18",
+    "react-router-dom": "4.3.1",
+    "react-static": "^6.3.6",
     "react-static-plugin-styled-components": "^6.3.0",
     "react-transition-group": "^2.6.1",
     "styled-components": "^4.1.3"

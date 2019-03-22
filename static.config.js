@@ -1,5 +1,6 @@
 export default {
-  basePath: 'multiverse-portfolio',
+  // basePath: 'multiverse-portfolio',
+  assetsPath: '/multiverse-portfolio',
   paths: {
     dist: 'docs',
   },

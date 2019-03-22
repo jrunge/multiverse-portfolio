@@ -99,7 +99,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "/multiverse-portfolio/";
 /******/
 /******/ 	// uncaught error handler for webpack runtime
 /******/ 	__webpack_require__.oe = function(err) {
@@ -1135,7 +1135,7 @@ function _getRouteInfo() {
           case 18:
             // In production, fetch the JSON file
             // Find the location of the routeInfo.json file
-            routeInfoRoot = ( false ? undefined : "multiverse-portfolio/") || false;
+            routeInfoRoot = ( false ? undefined : "/") || false;
             cacheBuster = process.env.REACT_STATIC_CACHE_BUST ? "?".concat(process.env.REACT_STATIC_CACHE_BUST) : '';
             getPath = "".concat(routeInfoRoot).concat((0, _utils.pathJoin)(path, 'routeInfo.json')).concat(cacheBuster); // If this is a priority call bypass the queue
 
@@ -1291,7 +1291,7 @@ function _prefetchData() {
                         }
 
                         _context3.next = 6;
-                        return _axios.default.get((0, _utils.pathJoin)("", "staticData/".concat(hash, ".json")));
+                        return _axios.default.get((0, _utils.pathJoin)("/multiverse-portfolio/", "staticData/".concat(hash, ".json")));
 
                       case 6:
                         _ref11 = _context3.sent;
@@ -1304,7 +1304,7 @@ function _prefetchData() {
                         // Non priority, share inflight requests and use pool
                         if (!inflightPropHashes[hash]) {
                           inflightPropHashes[hash] = requestPool.add(function () {
-                            return _axios.default.get((0, _utils.pathJoin)("", "staticData/".concat(hash, ".json")));
+                            return _axios.default.get((0, _utils.pathJoin)("/multiverse-portfolio/", "staticData/".concat(hash, ".json")));
                           });
                         }
 
@@ -2025,9 +2025,7 @@ function getRoutePath(routePath) {
   } // Be sure to remove the base path
 
 
-  if (true) {
-    routePath = routePath.replace(new RegExp("^\\/?".concat("multiverse-portfolio", "\\/")), '');
-  }
+  if (false) {}
 
   routePath = routePath || '/';
   return pathJoin(routePath);
@@ -2263,7 +2261,7 @@ function isSSR() {
 }
 
 function getBasePath() {
-  return  false ? undefined : "multiverse-portfolio";
+  return  false ? undefined : "";
 }
 
 function isPrefetchableRoute(path) {
@@ -3311,4 +3309,4 @@ if(false){}}
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.c4bbf1db.js.map
+//# sourceMappingURL=static.add8cfb3.js.map
