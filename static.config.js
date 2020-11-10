@@ -7,5 +7,8 @@ export default {
   getSiteData: () => ({
     title: 'Multiverse Portfolio',
   }),
-  plugins: ["react-static-plugin-styled-components"]
+  plugins: [
+    "react-static-plugin-react-router",
+    "react-static-plugin-styled-components"
+  ]
 };

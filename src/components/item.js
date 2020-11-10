@@ -10,7 +10,6 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 const Footer = styled.footer`
   padding: 4em 4em 2em 4em ;
-  /* transform: translateY(${(props) => props.open ? '1px' : '100vh'}); */
   transition: transform 0.5s ease;
   -webkit-overflow-scrolling: touch;
   background: rgba(36, 38, 41, 0.975);
