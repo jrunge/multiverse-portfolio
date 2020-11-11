@@ -2,118 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
 
-const Footer = styled.footer`
-  padding: 4em 4em 2em 4em ;
-  /* transform: translateY(1px); */
-  transition: transform 0.5s ease;
-  -webkit-overflow-scrolling: touch;
-  background: rgba(36, 38, 41, 0.975);
-  bottom: 4em;
-  left: 0;
-  max-height: calc(100vh - 4em);
-  overflow-y: auto;
-  position: fixed;
-  width: 100%;
-  z-index: 10001;
-
-  &.about-enter {
-    transform: translateY(100vh);
-  }
-  &.about-enter-active {
-    transform: translateY(1px);
-  }
-  &.about-exit {
-    transform: translateY(1px);
-  }
-  &.about-exit-active {
-    transform: translateY(100vh);
-  }
-
-  .inner {
-    margin: 0 auto;
-    max-width: 100%;
-    width: 75em;
-  }
-
-  .inner.split {
-    display: flex;
-  }
-
-  .inner.split > div {
-    margin-left: 4em;
-    width: 50%;
-  }
-
-  .inner.split > :first-child {
-    margin-left: 0;
-  }
-
-  > .closer {
-    transition: opacity 0.2s ease-in-out;
-    background-image: url(${require('../images/close.svg')});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 3em;
-    cursor: pointer;
-    height: 5em;
-    opacity: 0.25;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 5em;
-    z-index: 2;
-  }
-
-  > .closer:hover {
-    opacity: 1.0;
-  }
-
-  @media screen and (max-width: 1280px) {
-      padding: 3em 3em 1em 3em ;
-
-      > .inner.split > div {
-        margin-left: 3em;
-      }
-
-      > .closer {
-        background-size: 2.5em;
-        background-position: 75% 25%;
-      }
-
-  }
-
-  @media screen and (max-width: 980px) {
-
-    > .inner.split {
-      flex-direction: column;
-    }
-
-      > .inner.split > div {
-        margin-left: 0;
-        width: 100%;
-      }
-
-  }
-
-  @media screen and (max-width: 736px) {
-      padding: 4em 2em 2em 2em ;
-      bottom: auto;
-      top: calc(4em - 1px);
-
-      &.about-enter {
-        transform: translateY(-100vh);
-      }
-      &.about-enter-active {
-        transform: translateY(1px);
-      }
-      &.about-exit {
-        transform: translateY(1px);
-      }
-      &.about-exit-active {
-        transform: translateY(-100vh);
-      }
-  }
-
+const Footer = styled.div`
   /* Form */
 
 	form {
@@ -491,50 +380,47 @@ class MyFooter extends React.Component {
 
   render () {
     return (
-      <Footer loading={this.state.loading}>
-        <div className="inner split">
-          <div>
-            <section>
-              <h2>Magna feugiat sed adipiscing</h2>
-              <p>Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum eget quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu bibendum sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum.</p>
-            </section>
-            <section>
-              <h2>Follow me on ...</h2>
-              <ul className="icons">
-                <li><a href="#" className="icon fa-twitter"><span className="label">Twitter</span></a></li>
-                <li><a href="#" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
-                <li><a href="#" className="icon fa-instagram"><span className="label">Instagram</span></a></li>
-                <li><a href="#" className="icon fa-github"><span className="label">GitHub</span></a></li>
-                <li><a href="#" className="icon fa-dribbble"><span className="label">Dribbble</span></a></li>
-                <li><a href="#" className="icon fa-linkedin"><span className="label">LinkedIn</span></a></li>
-              </ul>
-            </section>
-            <p className="copyright">
-              &copy; Unttled. Design: <a href="http://html5up.net">HTML5 UP</a>.
-            </p>
-          </div>
-          <div>
-            <section>
-              <h2>Get in touch</h2>
-              <form method="post" action="#">
-                <div className="field half first">
-                  <input type="text" name="name" id="name" placeholder="Name" />
-                </div>
-                <div className="field half">
-                  <input type="text" name="email" id="email" placeholder="Email" />
-                </div>
-                <div className="field">
-                  <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
-                </div>
-                <ul className="actions">
-                  <li><input type="submit" value="Send" className="special" /></li>
-                  <li><input type="reset" value="Reset" /></li>
-                </ul>
-              </form>
-            </section>
-          </div>
-        </div>
-        <Link to="/" className="closer"/>
+      <Footer className="inner split">
+				<div>
+					<section>
+						<h2>Magna feugiat sed adipiscing</h2>
+						<p>Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum eget quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu bibendum sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum.</p>
+					</section>
+					<section>
+					<h2>Follow me on ...</h2>
+					<ul className="icons">
+						<li><a href="#" className="icon fa-twitter"><span className="label">Twitter</span></a></li>
+						<li><a href="#" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
+						<li><a href="#" className="icon fa-instagram"><span className="label">Instagram</span></a></li>
+						<li><a href="#" className="icon fa-github"><span className="label">GitHub</span></a></li>
+						<li><a href="#" className="icon fa-dribbble"><span className="label">Dribbble</span></a></li>
+						<li><a href="#" className="icon fa-linkedin"><span className="label">LinkedIn</span></a></li>
+					</ul>
+					</section>
+					<p className="copyright">
+						&copy; Unttled. Design: <a href="http://html5up.net">HTML5 UP</a>.
+					</p>
+				</div>
+				<div>
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div className="field half first">
+								<input type="text" name="name" id="name" placeholder="Name" />
+							</div>
+							<div className="field half">
+								<input type="text" name="email" id="email" placeholder="Email" />
+							</div>
+							<div className="field">
+								<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+							</div>
+							<ul className="actions">
+								<li><input type="submit" value="Send" className="special" /></li>
+								<li><input type="reset" value="Reset" /></li>
+							</ul>
+						</form>
+					</section>
+				</div>
       </Footer>
     )
   }
