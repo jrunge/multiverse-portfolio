@@ -119,16 +119,9 @@ const Panel = styled.footer`
       }
   }
 `
-
-class MyPanel extends React.Component {
-  render () {
-    return (
-      <Panel full={this.props.full}>
-        {this.props.children}
-        <Link to="/" className="closer"/>
-      </Panel>
-    )
-  }
-}
-
-export default MyPanel
+export default ({full, children}) => (
+  <Panel full={full}>
+    {children}
+    <Link to="/" className="closer"/>
+  </Panel>
+)

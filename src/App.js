@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { BrowserRouter, StaticRouter, Route} from "react-router-dom";
 
 
@@ -7,14 +7,9 @@ import Portfolio from './components/portfolio'
 
 const Router = typeof document !== 'undefined' ? BrowserRouter : StaticRouter;
 
-class App extends Component {
-  render() {
-    return (
-      <Router basename={process.env.REACT_STATIC_ENV === "production" ? "multiverse-portfolio" : "/"}>
-        <Portfolio/>
-      </Router>
-    )
-  }
-}
+export default () => (
+  <Router basename={process.env.REACT_STATIC_ENV === "production" ? "multiverse-portfolio" : "/"}>
+    <Portfolio/>
+  </Router>
+)
 
-export default App
