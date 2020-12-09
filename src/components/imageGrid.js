@@ -5,19 +5,19 @@ import styled from "styled-components";
 import { map, padStart } from "lodash";
 import { Link } from "react-router-dom";
 
-const pad = padStart
+const pad = padStart;
 
 const Image = styled.div`
   height: calc(40vh - 2em);
   min-height: 20em;
-  background-image: url(${props => props.imageUrl});
+  background-image: url(${(props) => props.imageUrl});
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
   transition: opacity 1.25s ease-in-out;
-  transition-delay: ${props => 0.65 + props.index * 0.15}s;
-  opacity: ${props => (props.loading ? "0" : "1")};
+  transition-delay: ${(props) => 0.65 + props.index * 0.15}s;
+  opacity: ${(props) => (props.loading ? "0" : "1")};
   &::after {
     background-image: linear-gradient(
       to top,
@@ -47,18 +47,18 @@ const ImageTitle = styled.h2`
 `;
 
 class ImageGrid extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      loading: true
-    }
+      loading: true,
+    };
   }
 
-  componentDidMount () {
-    setTimeout(() => this.setState({loading: false}), 100)
+  componentDidMount() {
+    setTimeout(() => this.setState({ loading: false }), 100);
   }
 
-  render () {
+  render() {
     const titles = [
       "Magna feugiat lorem",
       "Nisl adipiscing",
@@ -71,18 +71,23 @@ class ImageGrid extends React.Component {
       "Neque et faucibus viverra",
       "Mattis ante fermentum",
       "Sed ac elementum arcu",
-      "Vehicula id nulla dignissim"
+      "Vehicula id nulla dignissim",
     ];
 
-    const getImageUrl = (index) => require(`../images/thumbs/${pad(index + 1, 2,"0")}.jpg`);
+    const getImageUrl = (index) =>
+      require(`../images/thumbs/${pad(index + 1, 2, "0")}.jpg`);
 
     return (
-      <Grid.Provider
-        breakpoints={{ sm: "-500", md: "501-1100", lg: "+1101" }}
-      >
+      <Grid.Provider breakpoints={{ sm: "-500", md: "501-1100", lg: "+1101" }}>
         <Grid.Bounds direction="horizontal" wrap>
           {map(titles, (title, i) => (
-            <Grid.Box fluid sm={{width: "100%"}} md={{width: "50%"}} lg={{width: "33.33%"}} key={`thumb-${i}`}>
+            <Grid.Box
+              fluid
+              sm={{ width: "100%" }}
+              md={{ width: "50%" }}
+              lg={{ width: "33.33%" }}
+              key={`thumb-${i}`}
+            >
               <Link to={`/item/${i}`}>
                 <Image
                   loading={this.state.loading}
@@ -96,8 +101,8 @@ class ImageGrid extends React.Component {
           ))}
         </Grid.Bounds>
       </Grid.Provider>
-    )
+    );
   }
 }
 
-export default ImageGrid
+export default ImageGrid;

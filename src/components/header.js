@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import React from "react";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Header = styled.header`
-  transform: translateY(${(props) => props.loading ? '4em' : '0'});
+  transform: translateY(${(props) => (props.loading ? "4em" : "0")});
   transition: transform 1s ease;
   background: #1f2224;
   bottom: -1em;
@@ -79,8 +79,8 @@ const Header = styled.header`
     }
   }
   @media screen and (max-width: 736px) {
-    transform: translateY(${(props) => props.loading ? '-4em' : '0'});
-    ${'' /* @include vendor('transform', 'translateY(0)'); */}
+    transform: translateY(${(props) => (props.loading ? "-4em" : "0")});
+    ${"" /* @include vendor('transform', 'translateY(0)'); */}
     bottom: auto;
     height: 4em;
     padding: 0 1em;
@@ -101,35 +101,40 @@ const Header = styled.header`
       }
     }
   }
-
-`
+`;
 
 class MyHeader extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      loading: true
-    }
+      loading: true,
+    };
   }
 
-  componentDidMount () {
-    setTimeout(() => this.setState({loading: false}), 100)
+  componentDidMount() {
+    setTimeout(() => this.setState({ loading: false }), 100);
   }
 
-  render () {
+  render() {
     return (
       <Header loading={this.state.loading}>
-        <h1><a href="index.html"><strong>Multiverse</strong> by HTML5 UP</a></h1>
+        <h1>
+          <a href="index.html">
+            <strong>Multiverse</strong> by HTML5 UP
+          </a>
+        </h1>
         <nav>
           <ul>
             <li>
-              <Link to="/about">About <FontAwesomeIcon icon={faInfoCircle} /></Link>
+              <Link to="/about">
+                About <FontAwesomeIcon icon={faInfoCircle} />
+              </Link>
             </li>
           </ul>
         </nav>
       </Header>
-    )
+    );
   }
 }
 
-export default MyHeader
+export default MyHeader;

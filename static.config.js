@@ -1,14 +1,17 @@
 export default {
   // basePath: 'multiverse-portfolio',
-  assetsPath: process.env.REACT_STATIC_ENV === 'production' ? '/multiverse-portfolio' : '',
+  assetsPath:
+    process.env.REACT_STATIC_ENV === "production"
+      ? "/multiverse-portfolio"
+      : "",
   paths: {
-    dist: 'docs',
+    dist: "docs",
   },
   getSiteData: () => ({
-    title: 'Multiverse Portfolio',
+    title: "Multiverse Portfolio",
   }),
   plugins: [
     "react-static-plugin-react-router",
-    "react-static-plugin-styled-components"
-  ]
+    "react-static-plugin-styled-components",
+  ],
 };

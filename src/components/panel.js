@@ -1,21 +1,24 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import "react-image-gallery/styles/css/image-gallery.css";
-import ImageGallery from 'react-image-gallery';
+import ImageGallery from "react-image-gallery";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Panel = styled.footer`
-  padding: 4em 4em 2em 4em ;
+  padding: 4em 4em 2em 4em;
   transition: transform 0.5s ease;
   -webkit-overflow-scrolling: touch;
   background: rgba(36, 38, 41, 0.975);
   bottom: 4em;
   left: 0;
-  ${props => props.full ? 'height: calc(100vh - 4em);' : ''}
+  ${(props) => (props.full ? "height: calc(100vh - 4em);" : "")}
   overflow-y: auto;
   position: fixed;
   width: 100%;
@@ -55,7 +58,7 @@ const Panel = styled.footer`
 
   > .closer {
     transition: opacity 0.2s ease-in-out;
-    background-image: url(${require('../images/close.svg')});
+    background-image: url(${require("../images/close.svg")});
     background-position: center;
     background-repeat: no-repeat;
     background-size: 3em;
@@ -71,57 +74,55 @@ const Panel = styled.footer`
   }
 
   > .closer:hover {
-    opacity: 1.0;
+    opacity: 1;
   }
 
   @media screen and (max-width: 1280px) {
-      padding: 3em 3em 1em 3em ;
+    padding: 3em 3em 1em 3em;
 
-      > .inner.split > div {
-        margin-left: 3em;
-      }
+    > .inner.split > div {
+      margin-left: 3em;
+    }
 
-      > .closer {
-        background-size: 2.5em;
-        background-position: 75% 25%;
-      }
+    > .closer {
+      background-size: 2.5em;
+      background-position: 75% 25%;
+    }
   }
 
   @media screen and (max-width: 980px) {
-
     > .inner.split {
       flex-direction: column;
     }
 
-      > .inner.split > div {
-        margin-left: 0;
-        width: 100%;
-      }
-
+    > .inner.split > div {
+      margin-left: 0;
+      width: 100%;
+    }
   }
 
   @media screen and (max-width: 736px) {
-      padding: 4em 2em 2em 2em ;
-      bottom: auto;
-      top: calc(4em - 1px);
+    padding: 4em 2em 2em 2em;
+    bottom: auto;
+    top: calc(4em - 1px);
 
-      &.panel-enter {
-        transform: translateY(-100vh);
-      }
-      &.panel-enter-active {
-        transform: translateY(1px);
-      }
-      &.panel-exit {
-        transform: translateY(1px);
-      }
-      &.panel-exit-active {
-        transform: translateY(-100vh);
-      }
+    &.panel-enter {
+      transform: translateY(-100vh);
+    }
+    &.panel-enter-active {
+      transform: translateY(1px);
+    }
+    &.panel-exit {
+      transform: translateY(1px);
+    }
+    &.panel-exit-active {
+      transform: translateY(-100vh);
+    }
   }
-`
-export default ({full, children}) => (
+`;
+export default ({ full, children }) => (
   <Panel full={full}>
     {children}
-    <Link to="/" className="closer"/>
+    <Link to="/" className="closer" />
   </Panel>
-)
+);

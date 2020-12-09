@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { map, padStart } from "lodash";
 import { CSSTransition } from "react-transition-group";
-import { Route} from "react-router-dom";
+import { Route } from "react-router-dom";
 
 import Header from "../components/header";
 import Item from "../components/item";
@@ -21,10 +21,10 @@ const Wrapper = styled.div`
 
 export default () => (
   <Wrapper>
-    <Header/>
-    <ImageGrid/>
+    <Header />
+    <ImageGrid />
     <Route path="/item/:id">
-      {({ match }) =>
+      {({ match }) => (
         <CSSTransition
           in={match != null}
           timeout={1000}
@@ -32,14 +32,14 @@ export default () => (
           unmountOnExit
         >
           <Panel full>
-            <Item/>
+            <Item />
           </Panel>
         </CSSTransition>
-      }
+      )}
     </Route>
 
     <Route path="/about">
-      {({ match }) =>
+      {({ match }) => (
         <CSSTransition
           in={match != null}
           timeout={1000}
@@ -47,11 +47,10 @@ export default () => (
           unmountOnExit
         >
           <Panel>
-            <About/>
+            <About />
           </Panel>
         </CSSTransition>
-      }
+      )}
     </Route>
   </Wrapper>
-)
-
+);
