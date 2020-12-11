@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
+import { CSSTransition } from "react-transition-group";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useSiteData } from "react-static";
 
 const Header = styled.header`
-  transform: translateY(${(props) => (props.loading ? "4em" : "0")});
+  transform: translateY(4em);
   transition: transform 1s ease;
   background: #1f2224;
   bottom: -1em;
@@ -18,6 +19,13 @@ const Header = styled.header`
   user-select: none;
   width: 100%;
   z-index: 10002;
+
+  &.header-enter {
+    transform: translateY(0);
+  }
+  &.header-enter-done {
+    transform: translateY(0);
+  }
 
   h1 {
     color: #a0a0a1;
@@ -105,29 +113,25 @@ const Header = styled.header`
 `;
 
 export default () => {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    if (loading) {
-      setLoading(false);
-    }
-  });
   const { title } = useSiteData();
   return (
-    <Header loading={loading}>
-      <h1>
-        <a href="index.html">
-          <strong>{title}</strong> by HTML5 UP
-        </a>
-      </h1>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/about">
-              About <FontAwesomeIcon icon={faInfoCircle} />
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </Header>
+    <CSSTransition in appear timeout={200} component={null} classNames="header">
+      <Header>
+        <h1>
+          <a href="index.html">
+            <strong>{title}</strong> by HTML5 UP
+          </a>
+        </h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/about">
+                About <FontAwesomeIcon icon={faInfoCircle} />
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </Header>
+    </CSSTransition>
   );
 };
