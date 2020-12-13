@@ -32,7 +32,7 @@ export default () => (
           unmountOnExit
         >
           <Panel full>
-            <Item />
+            <Item itemId={match != null ? match.params.id : null} />
           </Panel>
         </CSSTransition>
       )}

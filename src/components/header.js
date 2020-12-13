@@ -119,7 +119,7 @@ export default () => {
       <Header>
         <h1>
           <a href="index.html">
-            <strong>{title}</strong> by HTML5 UP
+            <strong>{title}</strong>
           </a>
         </h1>
         <nav>
