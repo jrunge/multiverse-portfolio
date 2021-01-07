@@ -2,7 +2,19 @@ const assetsPath =
   process.env.REACT_STATIC_ENV === "production" ? "/multiverse-portfolio" : "";
 
 const getImageUrl = (imagePath) => assetsPath + imagePath;
-import siteData from "./defaultContent";
+import defaultSiteData from "./defaultContent";
+import fs from "fs";
+
+var siteData;
+try {
+  if (fs.existsSync("./customContent.js")) {
+    siteData = require("./customContent").default;
+  } else {
+    siteData = defaultSiteData;
+  }
+} catch (err) {
+  siteData = defaultSiteData;
+}
 
 export default {
   assetsPath: assetsPath,

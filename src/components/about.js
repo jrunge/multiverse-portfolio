@@ -2,6 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTwitter,
+  faFacebookF,
+  faInstagram,
+  faGithub,
+  faDribbble,
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons";
+
 const About = styled.div`
   /* Form */
 
@@ -366,6 +376,46 @@ const About = styled.div`
     pointer-events: none;
     opacity: 0.35;
   }
+
+  ul.actions {
+    display: flex;
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      padding: 0 1em 0 0;
+      vertical-align: middle;
+    }
+  }
+  ul.icons {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.5em;
+    margin: 0 0 1.5em 0;
+
+    li {
+      display: inline-block;
+      padding: 0 1em 0 0;
+    }
+
+    a {
+      text-decoration: none;
+      border-bottom: none;
+      position: relative;
+      color: #505051;
+    }
+  }
+
+  .copyright {
+    color: #505051;
+    font-size: 0.9em;
+
+    a {
+      color: inherit;
+    }
+  }
 `;
 
 export default () => (
@@ -385,39 +435,40 @@ export default () => (
         <h2>Follow me on ...</h2>
         <ul className="icons">
           <li>
-            <a href="#" className="icon fa-twitter">
-              <span className="label">Twitter</span>
+            <a href="#">
+              <FontAwesomeIcon icon={faTwitter} />
             </a>
           </li>
           <li>
             <a href="#" className="icon fa-facebook">
-              <span className="label">Facebook</span>
+              <FontAwesomeIcon icon={faFacebookF} />
             </a>
           </li>
           <li>
             <a href="#" className="icon fa-instagram">
-              <span className="label">Instagram</span>
+              <FontAwesomeIcon icon={faInstagram} />
             </a>
           </li>
           <li>
             <a href="#" className="icon fa-github">
-              <span className="label">GitHub</span>
+              <FontAwesomeIcon icon={faGithub} />
             </a>
           </li>
           <li>
             <a href="#" className="icon fa-dribbble">
-              <span className="label">Dribbble</span>
+              <FontAwesomeIcon icon={faDribbble} />
             </a>
           </li>
           <li>
             <a href="#" className="icon fa-linkedin">
-              <span className="label">LinkedIn</span>
+              <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
           </li>
         </ul>
       </section>
       <p className="copyright">
-        &copy; Unttled. Design: <a href="http://html5up.net">HTML5 UP</a>.
+        &copy; Unttled. Original Design:{" "}
+        <a href="http://html5up.net">HTML5 UP</a>.
       </p>
     </div>
     <div>

@@ -2,15 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import "react-image-gallery/styles/css/image-gallery.css";
-import ImageGallery from "react-image-gallery";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-
 const Panel = styled.footer`
   padding: 4em 4em 2em 4em;
   transition: transform 0.5s ease;
