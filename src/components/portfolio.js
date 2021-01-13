@@ -27,6 +27,7 @@ export default () => (
       {({ match }) => (
         <CSSTransition
           in={match != null}
+          appear
           timeout={1000}
           classNames="panel"
           unmountOnExit
@@ -42,6 +43,7 @@ export default () => (
       {({ match }) => (
         <CSSTransition
           in={match != null}
+          appear
           timeout={1000}
           classNames="panel"
           unmountOnExit

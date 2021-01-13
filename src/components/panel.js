@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Panel = styled.footer`
+  transform: translateY(100vh);
   padding: 4em 4em 2em 4em;
-  transition: transform 0.5s ease;
   -webkit-overflow-scrolling: touch;
   background: rgba(36, 38, 41, 0.975);
   bottom: 4em;
@@ -20,11 +20,19 @@ const Panel = styled.footer`
   }
   &.panel-enter-active {
     transform: translateY(1px);
+    transition: transform 0.5s ease;
+  }
+  &.panel-enter-done {
+    transform: translateY(1px);
   }
   &.panel-exit {
     transform: translateY(1px);
   }
   &.panel-exit-active {
+    transform: translateY(100vh);
+    transition: transform 0.5s ease;
+  }
+  &.panel-exit-done {
     transform: translateY(100vh);
   }
 
